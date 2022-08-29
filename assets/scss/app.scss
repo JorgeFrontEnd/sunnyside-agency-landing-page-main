@@ -1,0 +1,547 @@
+@use "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Smooch+Sans:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+#sunnyside-agency-landing {
+    font-family: 'Smooch Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/************************ Header **************************/
+#sunnyside-agency-landing {
+    a {
+        text-decoration: none;
+    }
+
+    header {
+        position: relative;
+        background-image: url("../_images/mobile/image-header.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 100vh;
+        min-height: 900px;
+
+        nav {
+            padding: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            #toggle {
+                display: none;
+            }
+
+            .hamburguer {
+                background: url("../_images/icon-hamburger.svg");
+                width: 24px;
+                height: 18px;
+                background-repeat: no-repeat;
+            }
+
+            .menu {
+                position: absolute;
+                top: 15%;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                ::after {
+                    position: absolute;
+                    top: -40px;
+                    right: 0;
+                    width: 0;
+                    height: 0;
+                    content: '';
+                    border-left: 40px solid transparent;
+                    border-bottom: 40px solid #fff;
+                }
+
+                li {
+                    font-size: 1.4em;
+                    font-weight: bold;
+                    margin: 0.5rem 2rem;
+                    color: variables.$grey;
+                }
+
+                .active {
+                    text-align: center;
+                    font-size: 1.5em;
+                    color: black;
+                    background-color: variables.$yellow;
+                    width: 150px;
+                    height: 50px;
+                    border-radius: 25px;
+                }
+
+                a .active:hover {
+                    background-color: rgb(120, 150, 184);
+                    color: #fff;
+                }
+            }
+
+            #toggle:checked~.menu {
+                background-color: variables.$white;
+                opacity: 1;
+                width: 85%;
+                height: 40%;
+                z-index: 1;
+            }
+
+            #toggle:checked~.hamburguer {
+                background: url("../_images/icon-x.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+
+            h1 {
+                font-family: 'Smooch';
+                font-size: 2.5em;
+                color: variables.$white;
+                font-weight: bolder;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            left: calc(50% - variables.$arrow_width / 2);
+            top: calc(65% - variables.$arrow_height / 2);
+        }
+
+    }
+
+    @media(min-width:768px) {
+        header {
+            background-image: url("../_images/desktop/image-header.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            min-height: 1200px;
+
+            nav {
+                padding: 20px 50px 0 50px;
+
+                .hamburguer {
+                    display: none;
+                }
+
+                .menu {
+                    position: initial;
+                    background: none;
+                    display: flex;
+                    flex-direction: row;
+                    opacity: 1;
+                    transform: translateX(0);
+
+                    ::after {
+                        display: none;
+                    }
+
+                    li {
+                        color: variables.$white;
+                    }
+
+                    .active {
+                        background-color: variables.$white;
+                        margin-right: 0;
+                    }
+
+                }
+            }
+
+            .title {
+                height: 50%;
+
+                h1 {
+                    font-size: 4em;
+                }
+            }
+
+            .arrow {
+                position: absolute;
+                left: calc(50% - variables.$arrow_width / 2);
+                top: calc(52% - variables.$arrow_height / 2);
+            }
+        }
+    }
+
+}
+
+/************************ END Header **************************/
+
+/************************ MAIN ********************************/
+#sunnyside-agency-landing {
+    main {
+        font-family: "Smooch";
+        [class^="col"] {
+            margin: 0;
+            padding: 0;
+            height: 60vh;
+            min-height: 600px;
+        }
+
+        .about {
+            .invert-mobile-order {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .flex {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+                    width: 80%;
+                    height: auto;
+
+                    h3 {
+                        font-size: 3em;
+                        font-weight: bold;
+                        line-height: 55px;
+                        padding-bottom: 20px;
+                    }
+
+                    p {
+                        font-size: 1em;
+                        font-weight: bold;
+                        line-height: 30px;
+                        padding-bottom: 20px;
+                        color: variables.$grey;
+                    }
+
+                    a {
+                        position: relative;
+                        font-size: 1.2em;
+                        color: black;
+                        text-decoration: none;
+                        align-self: center;
+
+                        &.first-hover {
+                            &::after {
+                                position: absolute;
+                                left: -5%;
+                                top: 30px;
+                                width: 110%;
+                                height: 8px;
+                                border-radius: 6px;
+                                background-color: variables.$yellow;
+                                opacity: 0.2;
+                                content: '';
+                                z-index: -1;
+                            }
+
+                            &:hover {
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        &.second-hover {
+                            &::after {
+                                position: absolute;
+                                left: -5%;
+                                top: 30px;
+                                width: 110%;
+                                height: 8px;
+                                opacity: 0.2;
+                                border-radius: 6px;
+                                background-color: variables.$red;
+                                content: '';
+                                z-index: -1;
+                            }
+
+                            &:hover {
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+
+            .flex2 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-end;
+
+                .content2 {
+                    width: 80%;
+                    color: variables.$green;
+                    text-align: center;
+
+                    h3 {
+                        font-size: 2em;
+                        font-weight: bold;
+                        line-height: 55px;
+                        padding-bottom: 20px;
+                    }
+
+                    p {
+                        font-size: 1em;
+                        font-weight: bold;
+                        line-height: 30px;
+                        padding-bottom: 20px;
+                    }
+                }
+
+                .photography {
+                    color: variables.$blue;
+                }
+            }
+
+            .bkg:nth-child(1) {
+                background-image: url("../_images/desktop/image-graphic-design.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: top center;
+            }
+
+            .bkg:nth-child(2) {
+                background-image: url("../_images/desktop/image-photography.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: top center;
+            }
+
+            picture img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+        @media(min-width:992px) {
+            .about {
+                .invert-mobile-order {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .flex {
+                    .content {
+                        width: 60%;
+
+                        a {
+                            align-self: flex-start;
+                        }
+                    }
+                }
+
+                .flex2 {
+                    .content2 {
+                        width: 60%;
+                    }
+                }
+
+            }
+        }
+
+        .testimonals {
+            padding-top: 100px;
+
+            [class^="col"] {
+                height: 30vh;
+                min-height: 360px;
+            }
+
+            .container-fluid {
+                max-width: 1080px;
+
+                h4 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    font-size: 1.3em;
+                    color: variables.$grey;
+                    padding-bottom: 20px;
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 25px;
+                    height:auto;
+
+                    p {
+                        font-size: 0.8em;
+                        font-weight: bold;
+                        text-align: center;
+                        margin-top: 30px;
+                        color: variables.$grey;
+                    }
+
+                    picture {
+                        text-align: center;
+
+                        img {
+                            width: 50%;
+                            height: 50%;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .desc {
+                        .name {
+                            text-align: center;
+                            font-size: 1.8em;
+                            font-weight: 900;
+                            color: black;
+                        }
+
+                        p {
+                            margin: 0;
+                            font-weight: bold;
+                            color: variables.$grey;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        @media(min-width:768px) {
+            .testimonals {
+                h4 {
+                    font-size: 3em;
+                }
+
+                .content {
+                    padding: 40px;
+
+                    p {
+                        margin-top: 50px;
+                    }
+
+                    .desc {
+                        .name {
+                            padding-top: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .gallery {
+
+            [class^="col"] {
+                margin: 0;
+                padding: 0;
+                height: 40vh;
+                min-height: 250px;
+            }
+
+            picture img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media(min-width:768px) {
+            .gallery {
+                padding-top: 120px;
+                [class^="col"] {
+                    margin: 0;
+                    padding: 0;
+                    height: 60vh;
+                    min-height: 200px;
+                }
+            }
+
+        }
+    }
+}
+
+/************************END MAIN ********************************/
+
+/************************* FOOTER **************************/
+#sunnyside-agency-landing {
+    footer {
+        font-family: "Smooch";
+        height: 20vh;
+        min-height: 350px;
+        background-color: variables.$footer;
+
+        .title {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            :hover {
+                color: variables.$white;
+            }
+
+            li {
+                color: #458c7e;
+                margin: 0 2rem;
+
+            }
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+
+            svg {
+                margin: 0 1rem;
+
+                :hover {
+                    fill: variables.$white;
+                }
+            }
+
+        }
+    }
+}
+
+/*************************END FOOTER **************************/
