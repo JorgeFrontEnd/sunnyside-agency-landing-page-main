@@ -26,7 +26,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;
-        height: 100vh;
         min-height: 900px;
 
         nav {
@@ -115,7 +114,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 500px;
+            min-height: inherit;
+            transform: translateY(-15%);
 
             h1 {
                 font-family: 'Smooch';
@@ -130,7 +130,7 @@
         .arrow {
             position: absolute;
             left: calc(50% - variables.$arrow_width / 2);
-            top: calc(65% - variables.$arrow_height / 2);
+            top: calc(60% - variables.$arrow_height / 2);
         }
 
     }
@@ -175,7 +175,6 @@
             }
 
             .title {
-                height: 50%;
 
                 h1 {
                     font-size: 4em;
@@ -187,10 +186,15 @@
                 left: calc(50% - variables.$arrow_width / 2);
                 top: calc(52% - variables.$arrow_height / 2);
             }
+        } 
+    }
+    @media(min-width:1900px) {
+        header {
+            min-height: 1500px;
         }
     }
-
 }
+
 
 /************************ END Header **************************/
 
@@ -198,6 +202,7 @@
 #sunnyside-agency-landing {
     main {
         font-family: "Smooch";
+
         [class^="col"] {
             margin: 0;
             padding: 0;
@@ -399,7 +404,7 @@
                     justify-content: center;
                     align-items: center;
                     padding: 25px;
-                    height:auto;
+                    height: auto;
 
                     p {
                         font-size: 0.8em;
@@ -478,6 +483,7 @@
         @media(min-width:768px) {
             .gallery {
                 padding-top: 120px;
+
                 [class^="col"] {
                     margin: 0;
                     padding: 0;

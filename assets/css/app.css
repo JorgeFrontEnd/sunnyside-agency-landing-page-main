@@ -21,7 +21,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  height: 100vh;
   min-height: 900px;
 }
 #sunnyside-agency-landing header nav {
@@ -100,7 +99,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
+  min-height: inherit;
+  transform: translateY(-15%);
 }
 #sunnyside-agency-landing header .title h1 {
   font-family: "Smooch";
@@ -113,7 +113,7 @@
 #sunnyside-agency-landing header .arrow {
   position: absolute;
   left: calc(50% - 18px);
-  top: calc(65% - 57px);
+  top: calc(60% - 57px);
 }
 @media (min-width: 768px) {
   #sunnyside-agency-landing header {
@@ -147,9 +147,6 @@
     background-color: white;
     margin-right: 0;
   }
-  #sunnyside-agency-landing header .title {
-    height: 50%;
-  }
   #sunnyside-agency-landing header .title h1 {
     font-size: 4em;
   }
@@ -157,6 +154,11 @@
     position: absolute;
     left: calc(50% - 18px);
     top: calc(52% - 57px);
+  }
+}
+@media (min-width: 1900px) {
+  #sunnyside-agency-landing header {
+    min-height: 1500px;
   }
 }
 
