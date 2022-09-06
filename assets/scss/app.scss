@@ -12,6 +12,7 @@
     font-size: 20px;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 /************************ Header **************************/
@@ -44,8 +45,12 @@
                 width: 24px;
                 height: 18px;
                 background-repeat: no-repeat;
+                z-index: 2;
             }
 
+            .logo{
+                z-index: 3;
+            }
             .menu {
                 position: absolute;
                 top: 15%;
